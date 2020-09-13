@@ -18,3 +18,4 @@ services:
       - db
     tty: true
     stdin_open: true
+    

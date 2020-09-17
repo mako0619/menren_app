@@ -16,6 +16,9 @@ Style/ClassAndModuleChildren:
 Style/Documentation:
   Enabled: false
 
+Airbnb/OptArgParameters:
+  Enabled: false
+
 #以下にはrubocopで検証したくないフォルダを指定する
 AllCops:
   Exclude:

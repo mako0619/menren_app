@@ -9,6 +9,10 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 
+gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

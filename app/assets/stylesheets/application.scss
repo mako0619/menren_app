@@ -16,12 +16,31 @@
 
 
 // ==================================
-// 共通設定（Bootstrap上書き）
+// 共通設定
 // ==================================
 
 .bg-dark {
   background-color: black !important;
 }
+
+
+// ==================================
+// flash
+// ==================================
+.notice {
+  background-color: green;
+  color: white;
+  text-align: center;
+  border-radius: 0px;
+}
+
+.alert {
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 0px;
+}
+
 
 // ==================================
 // header

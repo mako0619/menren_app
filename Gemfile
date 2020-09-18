@@ -18,6 +18,9 @@ gem 'dotenv-rails'
 
 gem 'rails-i18n'
 
+gem 'kaminari'
+gem 'faker'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

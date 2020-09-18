@@ -32,15 +32,16 @@
   color: white;
   text-align: center;
   border-radius: 0px;
+  margin-bottom: 0px;
 }
 
 .alert {
-  background-color: red;
+  background-color: orange;
   color: white;
   text-align: center;
   border-radius: 0px;
+  margin-bottom: 0px;
 }
-
 
 // ==================================
 // header
@@ -67,7 +68,10 @@
 }
 
 // ==================================
-// top
+// ログインページ
 // ==================================
 
- 
+ .button {
+   padding: 10px 20px;
+   border-radius: 5px;
+ }

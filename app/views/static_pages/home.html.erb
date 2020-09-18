@@ -9,7 +9,7 @@
       <div class="col-md-6 px-5">
         <h5 class="font-weight-bold text-center">【採用担当者様 簡単ログインフォーム】</h5>
         <p class="font-weight-bold text-center">下記の「簡単ログイン」ボタンで、<br>入力せずにログインできます。</p>
-        <%= form_for(:session, local: true) do |f| %>
+        <%= form_for(@user, url: user_session_path, local: true) do |f| %>
           <div class = 'form-group'>
             <%= f.label 'メールアドレス', class: 'font-small' %>
             <%= f.email_field :email, class: 'form-control', id: 'recruit_user_email', value: 'recruit@example.com' %>

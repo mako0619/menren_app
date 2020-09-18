@@ -7,6 +7,11 @@
     </div>
 
     <div class="field mx-auto w-75 mb-3">
+      <%= f.label :name, "ユーザー名", class: "font-small" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "w-100" %>
+    </div>
+
+    <div class="field mx-auto w-75 mb-3">
       <%= f.label :email, class: "font-small" %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-100" %>
     </div>

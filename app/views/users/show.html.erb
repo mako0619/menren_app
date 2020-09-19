@@ -15,17 +15,19 @@
         <%= link_to "profile edit", edit_user_registration_path, class: "btn btn-lg btn-primary" %>
       <% end %>
     </div>
-    <div class="col-md-8">
-      <h2 class="text-center mb-4">投稿一覧</h2>
+    <div class="col-md-8 py-5 mb-3">
+      <h2 class="text-center mb-4">全ての投稿</h2>
       <div class="container">
-        <div class="row mx-auto w-50">
-          <ul class="list-group w-100">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
+        <div class="row mx-auto w-75">
+          <% if @user.posts.any? %>
+            <h5 class="mb-3 w-100">投稿数 （<%= @user.posts.count %>）</h5>
+            <section class="posts-wrapper w-100">
+              <ol class="posts">
+                  <%= render @posts %>
+              </ol>
+              <%= paginate @posts %>
+            </section>
+          <% end %>
         </div>
       </div>
     </div>

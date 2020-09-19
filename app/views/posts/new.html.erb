@@ -1,0 +1,21 @@
+<% provide(:title, "新規投稿") %>
+<div class="container py-5">
+  <h2 class="text-center mb-3">新規投稿</h2>
+  <%= form_with(model: @post, local: true) do |f| %>
+    <div class="font-small w-75 mx-auto">
+      <%= render 'shared/error_messages', object: f.object %>
+    </div>
+
+    <div class="field mx-auto w-75 mb-3">
+      <%= f.label :title, "タイトル", class: "font-small" %>
+      <%= f.text_field :title, placeholder: "タイトル", class: "w-100" %>
+    </div>
+    <div class="field mx-auto w-75 mb-3">
+      <%= f.label :content, "本文", class: "font-small" %>
+      <%= f.text_area :content, placeholder: "投稿したい内容をここに書こう", class: "w-100" %>
+    </div>
+    <div class="actions mx-auto w-75 mb-3">
+      <%= f.submit "投稿する", class: "bg-dark text-white border-0 button" %>
+    </div>
+  <% end %>
+</div>

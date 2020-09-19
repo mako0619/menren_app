@@ -75,3 +75,40 @@
    padding: 10px 20px;
    border-radius: 5px;
  }
+
+// ==================================
+// 自分の投稿一覧
+// ==================================
+
+.posts {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .timestamp {
+    display: block;
+    color: gray;
+    text-align: right;
+  }
+}
+
+// ==================================
+// 投稿詳細ページ
+// ==================================
+.post-title {
+  width: 70%;
+  text-align: left;
+  h3{
+    border-bottom: 3px solid black;
+    padding-bottom: 10px;
+  }
+}
+
+.post-content {
+  padding-top: 10px;
+  width: 80%;
+}

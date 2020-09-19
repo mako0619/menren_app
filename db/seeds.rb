@@ -14,3 +14,11 @@ User.create!(name:  name,
    password:              password,
    password_confirmation: password)
 end
+
+# ユーザーの一部を対象にポストを生成する
+users = User.order(:created_at).take(3)
+25.times do
+  title = Faker::Lorem.sentence(word_count: 5)
+  content = Faker::Lorem.sentence(word_count: 30)
+  users.each { |user| user.posts.create!(title: title, content: content)}
+end

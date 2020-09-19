@@ -19,6 +19,9 @@ Style/Documentation:
 Airbnb/OptArgParameters:
   Enabled: false
 
+Airbnb/DefaultScope:
+  Enabled: false
+
 #以下にはrubocopで検証したくないフォルダを指定する
 AllCops:
   Exclude:

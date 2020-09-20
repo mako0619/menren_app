@@ -1,17 +1,17 @@
-<section class="post bg-light">
-  <div class="container py-5 px-5 bg-white">
-    <div class="row mb-5">
-      <div class="col-6">
-        ＊プロフィール画像＊  <%= @post.user.name%>
+<section class="post bg-light py-5">
+  <div class="container  px-5 bg-white w-50">
+    <div class="row py-2">
+      <div class="col-6 px-0">
+        <h4 class="mb-0">投稿者名：<%= @post.user.name%></h4>
       </div>
-      <div class="col-6">
-        ＊いいねボタン＊
+      <div class="col-6 text-right">
+        <%= render "likes/like", post: @post %>
         <% if current_user?(@post.user) %>
          <%= link_to "投稿を削除する", @post, method: :delete, data: { confirm: "You sure?" }, class: "text-dark" %>
         <% end %>
       </div>
     </div>
-    <div class="row mb-3 post-title">
+    <div class="row post-title">
       <h3 class="font-weight-bold"><%= @post.title%></h3>
     </div>
     <div class="row post-content">

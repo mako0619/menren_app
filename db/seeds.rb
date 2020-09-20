@@ -4,7 +4,7 @@ User.create!(name:  "recruit",
   password:              "password",
   password_confirmation: "password")
 
-  User.create!(name:  "foobar",
+User.create!(name:  "foobar",
   email: "foobar@example.com",
   password:              "foobar",
   password_confirmation: "foobar")

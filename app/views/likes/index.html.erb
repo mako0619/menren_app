@@ -1,0 +1,18 @@
+<div class="py-5 mb-3">
+  <h2 class="text-center mb-5">いいねした投稿一覧</h2>
+  <div class="mx-auto w-75">
+    <section class="posts-wrapper w-100">
+      <ol class="posts">
+        <% @posts.each do |post| %>
+          <li id="post-<%= post.id %>">
+            <p class="title m-0"><%= link_to post.title, post_path(post) , class: "text-dark font-weight-bold"%></p>
+            <span class="timestamp font-small">
+              Posted <%= time_ago_in_words(post.created_at) %> ago.
+            </span>
+        </li>
+        <% end %>
+      </ol>
+      <%= paginate @posts %>
+    </section>
+  </div>
+</div>

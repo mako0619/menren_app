@@ -23,6 +23,15 @@
   background-color: black !important;
 }
 
+a {
+  color: black !important;
+}
+
+.page-item.active .page-link {
+  color: #fff !important;
+  background-color: black; 
+  border-color: black;
+}
 
 // ==================================
 // flash
@@ -111,4 +120,34 @@
 .post-content {
   padding-top: 10px;
   width: 80%;
+}
+
+// ==================================
+// フォロー機能
+// ==================================
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid gray;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.users.follow {
+  padding: 0;
 }

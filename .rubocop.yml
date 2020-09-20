@@ -22,6 +22,10 @@ Airbnb/OptArgParameters:
 Airbnb/DefaultScope:
   Enabled: false
 
+# Offense count: 1
+Airbnb/RiskyActiverecordInvocation:
+  Enabled: false
+
 #以下にはrubocopで検証したくないフォルダを指定する
 AllCops:
   Exclude:

@@ -1,0 +1,14 @@
+<% provide(:title, @title) %>
+  <div class="container py-5">
+    <h2  class="mb-5"><%= @title %></h2>
+    <div class="mx-auto w-100">
+      <% if @users.any? %>
+        <%= paginate @users %>
+        <ul class="users follow">
+          <%= render @users %>
+        </ul>
+        <%= paginate @users %>
+      <% end %>
+    </div>
+  </div>
+</div>

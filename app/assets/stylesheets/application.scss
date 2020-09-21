@@ -162,4 +162,16 @@ a {
   border: none;
   font-size: 24px;
 }
- 
+
+// ==================================
+// コメント機能
+// ==================================
+.comment {
+  border-bottom: 1px solid gray;
+  list-style: none;
+}
+
+.comment-wrapper {
+  display: flex;
+}
+

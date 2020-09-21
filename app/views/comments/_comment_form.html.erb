@@ -1,0 +1,6 @@
+<%= form_with(model: @comment, remote: true, class: "comment-form") do |f| %>
+  <%= hidden_field :comment, :post_id, value: @post.id %>
+  <%= hidden_field :comment, :user_id, value: current_user.id %>
+  <%= f.text_area :content, placeholder: "コメントを入力", required: true, cols: "100" , class:"w-100" %> <br>
+  <%= f.button "投稿", class: "btn bg-dark text-white pull-right mt-1" %>
+<% end %>

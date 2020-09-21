@@ -1,5 +1,5 @@
 <section class="post bg-light py-5">
-  <div class="container  px-5 bg-white w-50">
+  <div class="container  px-5 bg-white w-50 py-3">
     <div class="row py-2">
       <div class="col-6 px-0">
         <h4 class="mb-0">投稿者名：<%= @post.user.name%></h4>
@@ -14,8 +14,19 @@
     <div class="row post-title">
       <h3 class="font-weight-bold"><%= @post.title%></h3>
     </div>
-    <div class="row post-content">
+    <div class="row post-content mb-5">
         <%= @post.content%>
+    </div>
+    <div class="row post-comment-list">
+      <p class="p-0 mb-0"><i class="fas fa-comment fa-fw fa-lg"></i>コメント</p>
+      <ol class="comments w-100 p-0">
+        <%= render @post.comments.all %>
+      </ol>
+    </div>
+    <div class="row post-comment-form mt-5">
+      <% if !current_user?(@post.user) %>
+        <%= render 'comments/comment_form' %>
+      <% end %>
     </div>
   </div>
 </section>

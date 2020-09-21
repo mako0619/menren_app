@@ -18,7 +18,12 @@
         <ul class="navbar-nav">
           <li class="nav-item"><%= link_to "お気に入り", likes_path(current_user), class: "nav-link text-white font-small" %></li>
           <li class="nav-item"><%= link_to "投稿", new_post_path, class: "nav-link text-white font-small" %></li>
-          <li class="nav-item"><%= link_to "通知", "#", class: "nav-link text-white font-small" %></li>
+          <li class="nav-item nav-item-wrap">
+            <% if unchecked_notifications.any? %>
+              <i class="fa fa-circle nav-item-mark" style="color: gold;"></i>
+            <% end %>
+            <%= link_to "通知", notifications_path, class: "nav-link text-white font-small" %>
+          </li>
           <li class="nav-item"><%= link_to "マイページ", user_path(current_user), class: "nav-link text-white font-small" %></li>
           <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, class: "nav-link text-white font-small", method: :delete %></li>
         </ul>

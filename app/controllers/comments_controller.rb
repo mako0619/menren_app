@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
+    @post = @comment.post
     if @comment.save
+      @post.create_notification_comment!(current_user, @comment.id)
       respond_to do |format|
         format.html do
           flash[:success] = "コメントを投稿しました。"

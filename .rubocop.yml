@@ -26,6 +26,12 @@ Airbnb/DefaultScope:
 Airbnb/RiskyActiverecordInvocation:
   Enabled: false
 
+Rails/HelperInstanceVariable:
+  Enabled: false
+
+Layout/DefEndAlignment:
+  Enabled: false
+
 #以下にはrubocopで検証したくないフォルダを指定する
 AllCops:
   Exclude:

@@ -175,3 +175,15 @@ a {
   display: flex;
 }
 
+// ==================================
+// 通知機能
+// ==================================
+.nav-item-wrap {
+  position: relative;
+}
+
+.nav-item-mark {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+}

@@ -1,0 +1,22 @@
+<ol class="posts">
+  <% @feed_items.each do |feed_item| %>
+    <li id="feed_item-<%= feed_item.id %>">
+      <div class="user-feed_item-wrapper">
+        <div class="profile-avatar">
+          <% if feed_item.user.avatar? %>  <!-- アップロード画像がある場合に実行する -->
+            <%= image_tag feed_item.user.avatar.url, class: "rounded-circle" %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
+          <% else %>
+            <%= image_tag "no-image.png", class: "rounded-circle" %>
+          <% end %>
+        </div>
+        <div class="title ml-3">
+          <%= link_to feed_item.title, post_path(feed_item) , class: "text-dark font-weight-bold"%>
+          <span class="timestamp font-small mt-1">
+            投稿 <%= time_ago_in_words(feed_item.created_at) %> 前
+          </span>
+        </div>
+      </div>
+    </li>
+  <% end %>
+<%= paginate @feed_items %>
+</ol>

@@ -1,11 +1,10 @@
 <% provide(:title, 'ユーザーリスト') %>
 <div class="container py-5">
   <h2 class="mb-5">ユーザーリスト</h2>
-  <div class="mx-auto w-100">
-    <%= paginate @users %>
-    <ul class="users">
+  <section class="users-wrapper w-100">
+    <ol class="users">
       <%= render @users %>
-    </ul>
+    </ol>
     <%= paginate @users %>
-  </div>
+  </section>
 </div>

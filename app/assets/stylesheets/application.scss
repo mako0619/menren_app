@@ -102,7 +102,33 @@ a {
   .timestamp {
     display: block;
     color: gray;
-    text-align: right;
+    text-align: left;
+  }
+}
+
+.user-post-wrapper {
+  display: flex;
+}
+// ==================================
+// 自分とフォローしている人の投稿一覧
+// ==================================
+.user-feed_item-wrapper {
+  display: flex;
+}
+
+// ==================================
+// ユーザー一覧
+// ==================================
+.user-wrapper {
+  display: flex;
+}
+
+.users {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
   }
 }
 
@@ -187,3 +213,4 @@ a {
   top: 10%;
   left: 70%;
 }
+

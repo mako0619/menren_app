@@ -4,8 +4,12 @@
     <div class="col-lg-4 py-5">
       <section class="profile-wrapper w-75 mx-auto">
         <section class="profile mb-3">
-          <p>＊これから実装：プロフィール画像</p>
-          <h4><%= @user.name %></h4>
+          <% if @user.avatar? %>  <!-- アップロード画像がある場合に実行する -->
+            <p>
+              <%= image_tag @user.avatar.url, class: "rounded-circle" %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
+            </p>
+            <% end %>
+          <h4>@<%= @user.name %></h4>
         </section>
         <section class="stats mb-3">
           <%= render 'shared/stats' %>

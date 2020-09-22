@@ -18,6 +18,11 @@
     </div>
 
     <div class="field mx-auto w-75 mb-3">
+      <%= f.label :avatar, "プロフィール画像", class: "font-small" %>
+      <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class: "w-100" %>
+    </div>
+
+    <div class="field mx-auto w-75 mb-3">
       <%= f.label :password, class: "font-small" %> <i class="font-small">(パスワードを変更したい場合はこちらを入力してください)</i><br />
       <%= f.password_field :password, autocomplete: "new-password", class: "w-100" %>
       <% if @minimum_password_length %>

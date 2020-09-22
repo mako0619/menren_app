@@ -23,6 +23,9 @@ gem 'faker'
 
 gem 'font-awesome-sass'
 
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

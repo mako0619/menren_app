@@ -3,9 +3,11 @@
     <h2 class="text-center mb-4">投稿一覧</h2>
     <div class="container">
       <div class="row mx-auto w-75">
-        <div class="feed-wrapper w-100">
-          <%= render 'shared/feed' %>
-        </div>
+        <% if @feed_items.any? %>
+          <section class="feed-wrapper w-100">
+            <%= render partial: 'shared/feed_item', locals:{feed_items: @feed_items} %>
+          </section>
+        <% end %>
       </div>
     </div>
   </section>

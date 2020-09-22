@@ -1,0 +1,22 @@
+<ol class="posts">
+  <% @posts.each do |post| %>
+    <li id="post-<%= post.id %>">
+      <div class="user-post-wrapper">
+        <div class="profile-avatar">
+          <% if post.user.avatar? %>  <!-- アップロード画像がある場合に実行する -->
+            <%= image_tag post.user.avatar.url, class: "rounded-circle" %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
+          <% else %>
+            <%= image_tag "no-image.png", class: "rounded-circle" %>
+          <% end %>
+        </div>
+        <div class="title ml-3">
+          <%= link_to post.title, post_path(post) , class: "text-dark font-weight-bold"%>
+          <span class="timestamp font-small mt-1">
+            投稿 <%= time_ago_in_words(post.created_at) %> 前
+          </span>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ol>
+<%= paginate @posts %>

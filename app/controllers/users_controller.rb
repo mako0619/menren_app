@@ -3,11 +3,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.page(params[:page]).per(20)
+    @posts = @user.posts.page(params[:page]).per(10)
   end
 
   def index
-    @users = User.page(params[:page]).per(20)
+    @users = User.page(params[:page]).per(10)
   end
 
   def following

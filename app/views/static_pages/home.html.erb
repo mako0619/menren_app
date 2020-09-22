@@ -51,9 +51,14 @@
   </section>
 
   <section class="content py-5 ">
-    <h2 class="text-center mb-4">フォローとかではなく全ての投稿一覧</h2>
+    <h2 class="text-center mb-5">投稿一覧</h2>
     <div class="container">
-      <div class="row mx-auto w-50">
+      <div class="row mx-auto w-75">
+        <% if @posts.any? %>
+          <section class="post-wrapper w-100">
+            <%= render partial: 'shared/top_post', locals:{posts: @posts} %>
+          </section>
+        <% end %>
       </div>
     </div>
   </section>

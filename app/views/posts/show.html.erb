@@ -24,7 +24,7 @@
       </ol>
     </div>
     <div class="row post-comment-form mt-5">
-      <% if !current_user?(@post.user) %>
+      <% if !current_user?(@post.user) && user_signed_in? %>
         <%= render 'comments/comment_form' %>
       <% end %>
     </div>

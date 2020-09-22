@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :likes, only: [:index, :create, :destroy]
   resources :comments, only: [:create, :destroy]
   resources :notifications, only: :index
+  get '/search', to: 'posts#search'
 end

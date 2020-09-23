@@ -10,7 +10,8 @@
     <div class="title ml-3">
       <%= link_to post.title, post_path(post) , class: "text-dark font-weight-bold"%>
       <span class="timestamp font-small mt-1">
-        Posted <%= time_ago_in_words(post.created_at) %> ago.
+        投稿者:<%= link_to @user.name, user_path(@user) , class: "text-light"%>&nbsp;
+        <%= time_ago_in_words(post.created_at) %>前
       </span>
     </div>
   </div>

@@ -1,18 +1,32 @@
 <div class="py-5 mb-3">
-  <h2 class="text-center mb-5">いいねした投稿一覧</h2>
-  <div class="mx-auto w-75">
-    <section class="posts-wrapper w-100">
-      <ol class="posts">
-        <% @posts.each do |post| %>
-          <li id="post-<%= post.id %>">
-            <p class="title m-0"><%= link_to post.title, post_path(post) , class: "text-dark font-weight-bold"%></p>
-            <span class="timestamp font-small">
-              投稿 <%= time_ago_in_words(post.created_at) %> 前
-            </span>
-          </li>
-        <% end %>
-      </ol>
-      <%= paginate @posts %>
-    </section>
+  <h2 class="text-center mb-4">お気に入り一覧</h2>
+  <div class="container">
+    <div class="mx-auto w-75">
+      <section class="posts-wrapper w-100">
+        <ol class="posts">
+          <% @posts.each do |post| %>
+            <li id="post-<%= post.id %>">
+              <div class="user-post-wrapper">
+                <div class="profile-avatar">
+                  <% if post.user.avatar? %>  <!-- アップロード画像がある場合に実行する -->
+                    <%= image_tag post.user.avatar.url, class: "rounded-circle" %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
+                  <% else %>
+                    <%= image_tag "no-image.png", class: "rounded-circle" %>
+                  <% end %>
+                </div>
+                <div class="title ml-3">
+                  <p class="title m-0"><%= link_to post.title, post_path(post) , class: "text-dark font-weight-bold"%></p>
+                  <span class="timestamp font-small mt-1">
+                    投稿者:<%= link_to post.user.name, user_path(post.user) , class: "text-light"%>&nbsp;
+                    <%= time_ago_in_words(post.created_at) %>前
+                  </span>
+                </div> 
+              </div>
+            </li>
+          <% end %>
+        </ol>
+        <%= paginate @posts %>
+      </section>
+    </div>
   </div>
 </div>

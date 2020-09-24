@@ -1,10 +1,8 @@
 <% if !current_user?(@post.user) %>
   <span id="post-form-<%= @post.id %>">
     <% if post.iine?(current_user) %>
-      <%# いいね削除 →こっちが動いていない %>
       <%= render 'likes/uniine', post: @post %>
     <% else %>
-      <%# いいねつける %>
       <%= render 'likes/iine', post: @post %>
     <% end %>
   </span>

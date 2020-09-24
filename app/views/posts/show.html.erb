@@ -1,3 +1,4 @@
+<% provide(:title, "投稿詳細") %>
 <section class="post bg-light py-5">
   <div class="container  px-5 bg-white w-50 py-3">
     <div class="row py-2">
@@ -5,7 +6,9 @@
         <h4 class="mb-0">投稿者名：<%= @post.user.name%></h4>
       </div>
       <div class="col-6 text-right">
-        <%= render "likes/like", post: @post %>
+        <% if !current_user?(@post.user) && user_signed_in? %>
+          <%= render "likes/like", post: @post %>
+        <% end %>
         <% if current_user?(@post.user) %>
          <%= link_to "投稿を削除する", @post, method: :delete, data: { confirm: "You sure?" }, class: "text-dark" %>
         <% end %>

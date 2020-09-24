@@ -3,8 +3,8 @@
     <li id="feed_item-<%= feed_item.id %>">
       <div class="user-feed_item-wrapper">
         <div class="profile-avatar">
-          <% if feed_item.user.avatar? %>  <!-- アップロード画像がある場合に実行する -->
-            <%= image_tag feed_item.user.avatar.url, class: "rounded-circle" %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
+          <% if feed_item.user.avatar? %>
+            <%= image_tag feed_item.user.avatar.url, class: "rounded-circle" %>
           <% else %>
             <%= image_tag "no-image.png", class: "rounded-circle" %>
           <% end %>

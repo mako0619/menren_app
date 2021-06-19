@@ -4,7 +4,6 @@
 ![イメージ](/app/assets/images/overview.gif)
 
 # URL
-https://menren.herokuapp.com/<br >
 画面中部の簡単ログインボタンから、メールアドレスとパスワードを入力せずにログインできます。
 
 # 使用技術
